@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+   long int saldo;
+   int pil,x,tarik;
+   cout <<"------------Masukkan saldo awal------------"<<endl;
+   cin >> saldo;
+   cout <<"-------------------------------------------"<<endl;
+   cout <<endl;
+   menu :
+   cout << "------------------------------------------"<<endl;
+   cout << "           MENU ATM BANK INTI" <<endl;
+   cout << "------------------------------------------"<<endl;
+   cout << "1. Informasi saldo" <<endl;
+   cout << "2. Pengambilan tunai" <<endl;
+   cout << "3. Pembayaran" <<endl;
+   cout << "4. Transfer" <<endl;
+   cout << "5. Keluar" <<endl;
+   cout << "------------------------------------------"<<endl;
+   cout << "Masukkan pilihan anda : " <<endl;
+   cin >> pil;
+   switch(pil){
+       case 1 :
+        cout << endl;
+        cout << "------------------------------------------"<<endl;
+        cout << "------------------------------------------"<<endl;
+        cout<<"Saldo anda berjumlah : " << saldo <<endl;
+        cout << "------------------------------------------"<<endl;
+        cout << "------------------------------------------"<<endl;
+        cout << "Masukkan sembarang angka untuk kembali ke menu";
+        cin >>x;
+        goto menu;
+       case 2 :
+       cout << endl;
+        cout << "------------------------------------------"<<endl;
+        cout << "------------------------------------------"<<endl;
+        cout<<"Saldo anda berjumlah : " << saldo <<endl;
+        cout << "------------------------------------------"<<endl;
+        cout << "------------------------------------------"<<endl;
+        cout<<"Nominal saldo yang ingin anda ambil : " ;
+        cin >>tarik;
+        if(saldo>tarik){
+            if(tarik>2000000){
+                cout<<"Maaf, batas pengambilan saldo maksimal 2.000.000"<<endl;
+            } else{
+                saldo = saldo-tarik;
+                cout<<"Penarikan tunai berhasil!, saldo anda tersisa : " << saldo <<endl;
+            }
+            
+        } else {
+            cout<<"Maaf.. Saldo anda tidak mencukupi untuk penarikan tunai" <<endl;
+            goto menu;
+        }
+   }
+}
