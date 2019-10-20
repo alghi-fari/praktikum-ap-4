@@ -1,0 +1,238 @@
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+int main()
+{
+	long int saldo, tarik;
+	int pil, exit,norek,trf;
+	string bank;
+	cout << "Masukkan jumlah saldo awal : ";
+	cin >> saldo;
+	menu:
+	system("cls");
+	cout << "-------------------------------------------" << endl;
+	cout << "           MENU ATM BANK INTI" << endl;
+	cout << "-------------------------------------------" << endl;
+	cout << " 1. Informasi saldo " << endl;
+	cout << " 2. Pengambilan tunai " << endl;
+	cout << " 3. Pembayaran " << endl;
+	cout << " 4. Transfer " << endl;
+	cout << " 5. Keluar " << endl;
+	cout << "-------------------------------------------" << endl;
+	cout << "Masukkan pilihan Anda : ";
+	cin >> pil;
+	switch (pil) {
+	case 1 :
+		system("cls");
+		cout << "-------------------------------------------" << endl;
+		cout << "Saldo anda berjumlah : " << saldo << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+		cin >> exit;
+		goto menu;
+		break;
+
+	case 2 :
+		system("cls");
+		cout << "-------------------------------------------" << endl;
+		cout << "           Saldo anda berjumlah : " << saldo << endl;
+		cout << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Masukkan nominal saldo yang ingin anda ambil (Maks 2jt)  :";
+		cin >> tarik;
+		if (tarik > 2000000) {
+			system("cls");
+			cout << "-------------------------------------------" << endl;
+			cout << "Nominal yang anda masukkan melebihi maksimal penarikan" << endl;
+			cout << "-------------------------------------------" << endl;
+			cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+			cin >> exit;
+			goto menu;
+		}
+		if (saldo < tarik) {
+			system("cls");
+			cout << "-------------------------------------------" << endl;
+			cout << "Saldo Anda kurang..." << endl;
+			cout << "-------------------------------------------" << endl;
+			cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+			cin >> exit;
+			goto menu;
+		}
+		saldo = saldo - tarik;
+		system("cls");
+		cout << "-------------------------------------------" << endl;
+		cout << "              Penarikan berhasil" << endl;
+		cout << " Saldo anda tersisa : " << saldo << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+		cin >> exit;
+		goto menu;
+		break;
+	case 3:
+		system("cls");
+		cout << "-------------------------------------------" << endl;
+		cout << "Pilihan Pembayaran : " << endl;
+		cout << endl;
+		cout << "1. Kartu kredit" << endl;
+		cout << "2. Telepon" << endl;
+		cout << "3. Rek. Koran" << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Masukkan pilihan anda:";
+		cin >> pil;
+		switch (pil) {
+		case 1 :
+			system("cls");
+			cout << "-------------------------------------------" << endl;
+			cout << " Tagihan Kartu kredit anda : Rp. 550.000,-" << endl;
+			cout << "-------------------------------------------" << endl;
+			cout << "Apakah anda ingin membayar?" << endl;
+			cout << "1.Ya" << endl;
+			cout << "2.Tidak" << endl;
+			cin >> pil;
+			if (pil == 1) {
+				if (saldo >= 550000) {
+					system("cls");
+					saldo = saldo - 550000;
+					cout << "-------------------------------------------" << endl;
+					cout << " Pembayaran kartu kredit anda berhasil" << endl;
+					cout << endl;
+					cout << "  Sisa saldo anda : " << saldo << endl;
+					cout << "-------------------------------------------" << endl;
+					cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+					cin >> exit;
+					goto menu;
+				}
+				system("cls");
+				cout << "-------------------------------------------" << endl;
+				cout << "       Saldo anda tidak mencukupi" << endl;
+				cout << endl;
+				cout << "  Sisa saldo anda : " << saldo << endl;
+				cout << "-------------------------------------------" << endl;
+				cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+				cin >> exit;
+				goto menu;
+			}
+			else {
+				goto menu;
+			}
+			break;
+		case 2:
+			system("cls");
+			cout << "-------------------------------------------" << endl;
+			cout << " Tagihan telepon anda : Rp. 250.000,-" << endl;
+			cout << "-------------------------------------------" << endl;
+			cout << "Apakah anda ingin membayar?" << endl;
+			cout << "1.Ya" << endl;
+			cout << "2.Tidak" << endl;
+			cin >> pil;
+			if (pil == 1) {
+				if (saldo >= 250000) {
+					system("cls");
+					saldo = saldo - 250000;
+					cout << "-------------------------------------------" << endl;
+					cout << " Pembayaran telepon anda berhasil" << endl;
+					cout << endl;
+					cout << "  Sisa saldo anda : " << saldo << endl;
+					cout << "-------------------------------------------" << endl;
+					cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+					cin >> exit;
+					goto menu;
+				}
+				system("cls");
+				cout << "-------------------------------------------" << endl;
+				cout << "       Saldo anda tidak mencukupi" << endl;
+				cout << endl;
+				cout << "  Sisa saldo anda : " << saldo << endl;
+				cout << "-------------------------------------------" << endl;
+				cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+				cin >> exit;
+				goto menu;
+			}
+			else {
+				goto menu;
+			}
+		case 3:
+			system("cls");
+			cout << "----------------------------------------------" << endl;
+			cout << " Tagihan rekening koran anda : Rp. 130.000,-" << endl;
+			cout << "----------------------------------------------" << endl;
+			cout << "Apakah anda ingin membayar?" << endl;
+			cout << "1.Ya" << endl;
+			cout << "2.Tidak" << endl;
+			cin >> pil;
+			if (pil == 1) {
+				if (saldo >= 130000) {
+					system("cls");
+					saldo = saldo - 130000;
+					cout << "-------------------------------------------" << endl;
+					cout << " Pembayaran kartu kredit anda berhasil" << endl;
+					cout << endl;
+					cout << "  Sisa saldo anda : " << saldo << endl;
+					cout << "-------------------------------------------" << endl;
+					cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+					cin >> exit;
+					goto menu;
+				}
+				system("cls");
+				cout << "-------------------------------------------" << endl;
+				cout << "       Saldo anda tidak mencukupi" << endl;
+				cout << endl;
+				cout << "  Sisa saldo anda : " << saldo << endl;
+				cout << "-------------------------------------------" << endl;
+				cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+				cin >> exit;
+				goto menu;
+			}
+			else {
+				goto menu;
+			}
+			break;
+		}
+	break;
+	case 4:
+		system("cls");
+		cout << "-------------------------------------------" << endl;
+		cout << "              Transfer uang" << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Masukkan no.rek : ";
+		cin >> norek;
+		cout << "Masukkan nama bank penerima : ";
+		cin >> bank;
+		cout << "Nominal uang yang ditransfer : ";
+		cin >> trf;
+		if (trf > saldo) {
+			system("cls");
+			cout << "-------------------------------------------" << endl;
+			cout << "       Saldo anda tidak mencukupi" << endl;
+			cout << endl;
+			cout << "  Sisa saldo anda : " << saldo << endl;
+			cout << "-------------------------------------------" << endl;
+			cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+			cin >> exit;
+			goto menu;
+		}
+		saldo = saldo - trf;
+		system("cls");
+		cout << "-------------------------------------------" << endl;
+		cout << "  Transfer berhasil dilakukan ke Rekening" << endl;
+		cout << "  " <<norek << " Bank " << bank << endl;
+		cout << "  Sisa saldo anda : " << saldo << endl;
+		cout << "-------------------------------------------" << endl;
+		cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+		cin >> exit;
+		goto menu;
+		break;
+	case 5:
+		return 0;
+		break;
+	case 6:
+		system("cls");
+		saldo = saldo + 1000000;
+		cout << "Penambahan saldo 1jt" << endl;
+		cout << "Masukkan angka apa saja untuk kembali ke menu... :";
+		cin >> exit;
+		goto menu;
+	}
+
+}
